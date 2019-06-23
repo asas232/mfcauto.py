@@ -233,6 +233,7 @@ class Client(EventEmitter):
                     url += "{}={}&".format(name, extdata.setdefault(name, None))
             with urllib.request.urlopen(url) as req:
                 contents = json.loads(req.read().decode('utf-8'))
+                log.info("ttt--"+content);
                 packet = Packet(extdata["msg"]["type"], extdata["msg"]["from"],
                                 extdata["msg"]["to"], extdata["msg"]["arg1"],
                                 extdata["msg"]["arg2"], contents)
