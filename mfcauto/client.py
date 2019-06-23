@@ -227,7 +227,7 @@ class Client(EventEmitter):
         self.tx_cmd(packet.fctype, packet.nto, packet.narg1, packet.narg2, packet.smessage)
     def _handle_extdata(self, extdata):
         if extdata != None and "respkey" in extdata:
-            url = "http://www.myfreecams.com/php/FcwExtResp.php?"
+            url = "http://assets.myfreecams.com/php/FcwExtResp.php?"
             for name in ["respkey", "type", "opts", "serv"]:
                 if name in extdata:
                     url += "{}={}&".format(name, extdata.setdefault(name, None))
